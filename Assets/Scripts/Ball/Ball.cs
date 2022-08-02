@@ -8,11 +8,10 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.GetContact(0).point);
         if(HitEffectPS)
         {
-            Debug.Log("Gonna play the animation!");
             HitEffectPS.transform.position = collision.GetContact(0).point;
+            AudioManager.instance.Play("Basketball");
             HitEffectPS.Play();
         }
     }
