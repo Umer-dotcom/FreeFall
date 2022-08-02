@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int total_retries = 3;
     [SerializeField] private int retries_left;
 
+    [SerializeField] private int score;
+
     [SerializeField] private bool itIsGoal;
     [SerializeField] private bool gameEnded;
 
@@ -43,6 +45,11 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         
+    }
+
+    public void IncrementScore()
+    {
+        score += 1;
     }
 
     public void GoalIsMade()

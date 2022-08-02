@@ -12,6 +12,7 @@ public class Star : MonoBehaviour
         {
             AudioManager.instance.Play("Star");
             this.gameObject.SetActive(false);
+            GameManager.instance.IncrementScore();
             starCollectionEffect.transform.position = transform.position;
             starCollectionEffect.Play();
         }
