@@ -11,6 +11,16 @@ public class DragController : MonoBehaviour
     private Vector3 _worldPosition;
     private Draggable _lastDragged;
 
+    [SerializeField] private bool _thereIsLimit;
+
+    [SerializeField] private bool xLock;
+    [SerializeField] private Vector2 xLim;
+
+    [SerializeField] private bool yLock;
+    [SerializeField] private Vector2 yLim;
+
+    [SerializeField] private GameObject selectedObj;
+
     private void Awake()
     {
         if (instance == null)
@@ -55,6 +65,12 @@ public class DragController : MonoBehaviour
                 Draggable draggable = hit.transform.gameObject.GetComponent<Draggable>();
                 if(draggable != null)
                 {
+                    selectedObj = hit.transform.gameObject;
+                    xLock = selectedObj.GetComponent<LockAxis>().xAxis;
+                    yLock = selectedObj.GetComponent<LockAxis>().yAxis;
+
+                    CheckIfAnyLimit();
+
                     _lastDragged = draggable;
                     InitiDrag();
                 }
@@ -69,11 +85,72 @@ public class DragController : MonoBehaviour
 
     private void Drag()
     {
-        _lastDragged.transform.position = new Vector2(_worldPosition.x, _worldPosition.y);
+        if(xLock && yLock)
+        {
+            // No movement if both axis are locked
+            Debug.Log("Both axis are locked!");
+        }
+        else if(xLock)
+        {
+            Debug.Log("X axis is locked");
+            if(_thereIsLimit)
+            {
+                _lastDragged.transform.position = new Vector2(selectedObj.transform.position.x, _worldPosition.y);
+                if(_lastDragged.transform.position.y >= yLim.y)
+                {
+                    _lastDragged.transform.position = new Vector2(selectedObj.transform.position.x, yLim.y);
+                }
+                else if(_lastDragged.transform.position.y <= yLim.x)
+                {
+                    _lastDragged.transform.position = new Vector2(selectedObj.transform.position.x, yLim.x);
+                }
+            }
+        }
+        else if(yLock)
+        {
+            Debug.Log("Y axis is locked");
+            if (_thereIsLimit)
+            {
+                _lastDragged.transform.position = new Vector2(_worldPosition.x, selectedObj.transform.position.y);
+                if (_lastDragged.transform.position.x >= xLim.y)
+                {
+                    _lastDragged.transform.position = new Vector2(xLim.y, selectedObj.transform.position.y);
+                }
+                else if (_lastDragged.transform.position.x <= xLim.x)
+                {
+                    _lastDragged.transform.position = new Vector2(xLim.x, selectedObj.transform.position.y);
+                }
+            }
+        }
+        else
+        {
+            Debug.Log("No axis is locked");
+            _lastDragged.transform.position = new Vector2(_worldPosition.x, _worldPosition.y);
+        }
     }
 
     private void Drop()
     {
         _isDragActive = false;
+        _thereIsLimit = false;
+        xLock = false;
+        yLock = false;
+        xLim = Vector2.zero;
+        yLim = Vector2.zero;
+        selectedObj = null;
+    }
+
+    private void CheckIfAnyLimit()
+    {
+        if(selectedObj)
+        {
+            if(selectedObj.GetComponent<LockAxis>()._isAnyLimit == true)
+            {
+                Debug.Log("There is a limit!");
+                _thereIsLimit = true;
+                xLim = new Vector2(selectedObj.GetComponent<LockAxis>().xAxisLimit.x, selectedObj.GetComponent<LockAxis>().xAxisLimit.y);
+                yLim = new Vector2(selectedObj.GetComponent<LockAxis>().yAxisLimit.x, selectedObj.GetComponent<LockAxis>().yAxisLimit.y);
+            }
+        }
     }
 }

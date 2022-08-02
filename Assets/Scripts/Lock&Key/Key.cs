@@ -9,6 +9,7 @@ public class Key : MonoBehaviour
     private void Awake()
     {
         currPos = transform.position;
+        this.GetComponent<LockAxis>().xAxisLimit.y = currPos.x;
     }
 
     private void Update()
