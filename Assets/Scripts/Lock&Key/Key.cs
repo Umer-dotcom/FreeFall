@@ -10,6 +10,7 @@ public class Key : MonoBehaviour
     {
         currPos = transform.position;
         this.GetComponent<LockAxis>().xAxisLimit.y = currPos.x;
+        this.GetComponent<LockAxis>().xAxisLimit.x = currPos.x - 0.933f; // 0.933 factor to move key back
     }
 
     private void Update()
