@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class GoalDetector : MonoBehaviour
 {
+    [SerializeField] private HoopController controller;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Ball"))
         {
-
+            if (controller)
+                controller.Goal();
         }
     }
 }
