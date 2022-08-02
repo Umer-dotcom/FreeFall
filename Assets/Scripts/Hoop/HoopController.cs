@@ -29,6 +29,7 @@ public class HoopController : MonoBehaviour
         else if (isItGoal)
         {
             Debug.Log("Goal!!!");
+            GameManager.instance.GoalIsMade();
         }
     }
 
