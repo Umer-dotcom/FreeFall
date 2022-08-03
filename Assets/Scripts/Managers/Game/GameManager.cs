@@ -70,9 +70,9 @@ public class GameManager : MonoBehaviour
             {
                 gameEnded = true;
                 Debug.Log("YOU WON!");
+                AudioManager.instance.Play("Goal");
                 GOD.gameover = true;
                 // Camera shake
-                // Confetti or fireworks
                 Instantiate(ConfettiPS);
                 Instantiate(FireworksPS);
                 // You won screen
@@ -86,6 +86,7 @@ public class GameManager : MonoBehaviour
         if (gameEnded == false && itIsGoal == false)
         {
             gameEnded = true;
+            AudioManager.instance.Play("Lose");
             Debug.Log("YOU LOSE");
             // Play sad sound
             // Lose Screen
