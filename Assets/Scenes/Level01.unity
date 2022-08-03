@@ -1612,7 +1612,6 @@ RectTransform:
   - {fileID: 1481852481}
   - {fileID: 568932625}
   - {fileID: 1363480790}
-  - {fileID: 945879445}
   m_Father: {fileID: 116904928}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2181,8 +2180,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 711748626}
-  m_RootOrder: 3
+  m_Father: {fileID: 1363480790}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -2754,6 +2753,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 138435484}
+  - {fileID: 945879445}
   m_Father: {fileID: 711748626}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3418,6 +3418,7 @@ MonoBehaviour:
   itIsGoal: 0
   gameEnded: 0
   timeBeforeRetry: 2
+  timeBeforePopUp: 3
 --- !u!1 &1717335358
 GameObject:
   m_ObjectHideFlags: 0
@@ -3592,6 +3593,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuPanel: {fileID: 519791336}
+  starsCount: {fileID: 351065145}
+  retriesCount: {fileID: 945879446}
 --- !u!4 &1869797049
 Transform:
   m_ObjectHideFlags: 0
@@ -4275,7 +4278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4391615334091060422, guid: 8f1a80b9c8e200e4da22394a00c63823, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f1a80b9c8e200e4da22394a00c63823, type: 3}

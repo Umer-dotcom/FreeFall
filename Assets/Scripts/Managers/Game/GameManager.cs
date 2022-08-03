@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool gameEnded;
 
     [SerializeField] private float timeBeforeRetry = 3f;
+    [SerializeField] private float timeBeforePopUp = 3f;
 
     private void Awake()
     {
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour
     public void IncrementScore()
     {
         score += 1;
+        UIManager.instance.UpdateCounts();
     }
 
     public void GoalIsMade()
@@ -76,6 +78,7 @@ public class GameManager : MonoBehaviour
                 Instantiate(ConfettiPS);
                 Instantiate(FireworksPS);
                 // You won screen
+                StartCoroutine(DelayBeforeWinScreenShowUp());
                 // Stop all nonsense scripts
             }
         }
@@ -88,6 +91,7 @@ public class GameManager : MonoBehaviour
             gameEnded = true;
             AudioManager.instance.Play("Lose");
             Debug.Log("YOU LOSE");
+            StartCoroutine(DelayBeforeLoseScreenShowUp());
             // Play sad sound
             // Lose Screen
             // Stop all nonesense scripts
@@ -98,7 +102,7 @@ public class GameManager : MonoBehaviour
     {
         retries_left += 1;
         GOD.gameover = true;
-        if (retries_left > total_retries)
+        if (retries_left >= total_retries)
         {
             YouLose();
         }
@@ -106,12 +110,18 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Starting Coroutine");
             StartCoroutine(Delay());
+            UIManager.instance.UpdateCounts();
         }
     }
 
     public int GetScore()
     {
         return score;
+    }
+
+    public int GetRetriesLeft()
+    {
+        return total_retries - retries_left;
     }
 
     IEnumerator Delay()
@@ -121,5 +131,17 @@ public class GameManager : MonoBehaviour
         GOD.gameover = false;
         itIsGoal = false;
         keyObjPrefab.transform.position = keyStartPos;
+    }
+
+    IEnumerator DelayBeforeWinScreenShowUp()
+    {
+        yield return new WaitForSeconds(timeBeforePopUp);
+        UIManager.instance.ShowTheWinScreen();
+    }
+
+    IEnumerator DelayBeforeLoseScreenShowUp()
+    {
+        yield return new WaitForSeconds(timeBeforePopUp);
+        UIManager.instance.ShowLoseScreen();
     }
 }

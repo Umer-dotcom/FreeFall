@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
 
     [SerializeField] private GameObject MenuPanel;
+    [SerializeField] private Text starsCount;
+    [SerializeField] private Text retriesCount;
 
     private GameObject pauseMenu;
     private GameObject winScreen;
@@ -81,6 +83,12 @@ public class UIManager : MonoBehaviour
     {
         MenuPanel.SetActive(true);
         loseScreen.SetActive(true);
+    }
+
+    public void UpdateCounts()
+    {
+        starsCount.text = GameManager.instance.GetScore().ToString();
+        retriesCount.text = GameManager.instance.GetRetriesLeft().ToString();
     }
 
 }
