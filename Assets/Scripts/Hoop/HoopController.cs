@@ -49,4 +49,10 @@ public class HoopController : MonoBehaviour
         Debug.Log("False Goal!");
         isItFoul = !isItFoul;
     }
+
+    public void ResetValues()
+    {
+        isItGoal = false;
+        isItFoul = false;
+    }
 }

@@ -58,3 +58,4 @@ MonoBehaviour:
   gameEnded: 0
   timeBeforeRetry: 2
   timeBeforePopUp: 3
+  HC: {fileID: 0}

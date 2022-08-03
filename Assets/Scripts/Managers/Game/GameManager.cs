@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float timeBeforeRetry = 3f;
     [SerializeField] private float timeBeforePopUp = 3f;
 
+    [SerializeField] private HoopController HC;
+
     private void Awake()
     {
         if (instance == null)
@@ -131,6 +133,8 @@ public class GameManager : MonoBehaviour
         GOD.gameover = false;
         itIsGoal = false;
         keyObjPrefab.transform.position = keyStartPos;
+        if (HC)
+            HC.ResetValues();
     }
 
     IEnumerator DelayBeforeWinScreenShowUp()
