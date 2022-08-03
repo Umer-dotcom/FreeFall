@@ -109,6 +109,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public int GetScore()
+    {
+        return score;
+    }
+
     IEnumerator Delay()
     {
         yield return new WaitForSeconds(timeBeforeRetry);

@@ -34,7 +34,7 @@ public class SceneController : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        SceneManager.LoadSceneAsync(SceneManager.GetSceneByName("MainMenu").buildIndex);
+        SceneManager.LoadSceneAsync(0);
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
     }
 
