@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameOverDetector GOD;
 
+    [SerializeField] private GameObject ConfettiPS;
+    [SerializeField] private GameObject FireworksPS;
+
     [SerializeField] private GameObject ballPrefab;
     [SerializeField] private Vector2 ballStartPos;
 
@@ -70,6 +73,8 @@ public class GameManager : MonoBehaviour
                 GOD.gameover = true;
                 // Camera shake
                 // Confetti or fireworks
+                Instantiate(ConfettiPS);
+                Instantiate(FireworksPS);
                 // You won screen
                 // Stop all nonsense scripts
             }

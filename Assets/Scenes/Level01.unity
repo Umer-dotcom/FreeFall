@@ -3299,6 +3299,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GOD: {fileID: 740798163}
+  ConfettiPS: {fileID: 8173628361201932759, guid: ba86b8124008c2548b687419621c1e73, type: 3}
+  FireworksPS: {fileID: 6563393846776594950, guid: e9769351fc3afa941867f37a7e6fe9a0, type: 3}
   ballPrefab: {fileID: 1584977930}
   ballStartPos: {x: 0, y: 0}
   keyObjPrefab: {fileID: 1944513878}
