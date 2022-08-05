@@ -34,6 +34,7 @@ public class SceneController : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        AudioManager.instance.Stop();
         SceneManager.LoadSceneAsync(0);
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
     }
@@ -48,6 +49,7 @@ public class SceneController : MonoBehaviour
 
     public void GoToNextScene()
     {
+        AudioManager.instance.Stop();
         int currScene = SceneManager.GetActiveScene().buildIndex;
 
         if(currScene + 1 > totalScenes)

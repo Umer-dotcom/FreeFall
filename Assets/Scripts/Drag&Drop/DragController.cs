@@ -65,12 +65,12 @@ public class DragController : MonoBehaviour
                 Draggable draggable = hit.transform.gameObject.GetComponent<Draggable>();
                 if(draggable != null)
                 {
-                    if(draggable.gameObject.CompareTag("Platform"))
-                    {
-                        GameObject parent = draggable.transform.parent.gameObject;
-                        LineRenderer line = transform.Find("LineRenderer").GetComponent<LineRenderer>();
-                        // line.colorGradient.alphaKeys = 
-                    }
+                    //if(draggable.gameObject.CompareTag("Platform"))
+                    //{
+                    //    GameObject parent = draggable.transform.parent.gameObject;
+                    //    LineRenderer line = transform.Find("LineRenderer").GetComponent<LineRenderer>();
+                    //    // line.colorGradient.alphaKeys = 
+                    //}
 
                     selectedObj = hit.transform.gameObject;
                     xLock = selectedObj.GetComponent<LockAxis>().xAxis;
