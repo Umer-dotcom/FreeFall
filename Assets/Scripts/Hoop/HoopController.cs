@@ -36,6 +36,7 @@ public class HoopController : MonoBehaviour
     public void Shake()
     {
         anim.SetTrigger("Shake");
+        AudioManager.instance.Play("Ring");
     }
 
     public void Goal()

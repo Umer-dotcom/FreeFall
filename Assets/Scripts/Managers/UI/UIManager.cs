@@ -36,6 +36,7 @@ public class UIManager : MonoBehaviour
     public void PauseTheGame()
     {
         Time.timeScale = 0f;
+        AudioManager.instance.Stop();
         MenuPanel.SetActive(true);
         pauseMenu.SetActive(true);
     }

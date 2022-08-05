@@ -25,8 +25,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool itIsGoal;
     [SerializeField] private bool gameEnded;
 
-    [SerializeField] private float timeBeforeRetry = 3f;
-    [SerializeField] private float timeBeforePopUp = 3f;
+    [SerializeField] private float timeBeforeRetry = 1f;
+    [SerializeField] private float timeBeforePopUp = 1f;
 
     [SerializeField] private HoopController HC;
 

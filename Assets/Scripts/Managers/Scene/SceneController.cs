@@ -41,6 +41,7 @@ public class SceneController : MonoBehaviour
     public void RestartCurrentScene()
     {
         Time.timeScale = 1f;
+        AudioManager.instance.Stop();
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
     }
