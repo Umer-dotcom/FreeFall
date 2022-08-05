@@ -58,7 +58,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
   - name: Goal
-    clip: {fileID: 8300000, guid: 51a0eee28ed3b8745aea97bd7e9d5236, type: 3}
+    clip: {fileID: 8300000, guid: b7fe32902b22b194fb43de8d7df96632, type: 3}
     volume: 0.78
     pitch: 1
     source: {fileID: 0}
@@ -69,3 +69,15 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
+  - name: Ring
+    clip: {fileID: 8300000, guid: 31a2c9e3e4fcb9c4ab2b14436c2299e6, type: 3}
+    volume: 0.78
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Theme
+    clip: {fileID: 8300000, guid: 7e192c2420ce6f049a84d7ca74bd46b4, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1

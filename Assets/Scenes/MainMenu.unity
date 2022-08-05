@@ -626,50 +626,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6743708776963176181, guid: 005d22bcbb2dc8a4e907109f741f6207, type: 3}
-      propertyPath: sounds.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6743708776963176181, guid: 005d22bcbb2dc8a4e907109f741f6207, type: 3}
-      propertyPath: sounds.Array.data[2].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: b7fe32902b22b194fb43de8d7df96632, type: 3}
-    - target: {fileID: 6743708776963176181, guid: 005d22bcbb2dc8a4e907109f741f6207, type: 3}
-      propertyPath: sounds.Array.data[4].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 31a2c9e3e4fcb9c4ab2b14436c2299e6, type: 3}
-    - target: {fileID: 6743708776963176181, guid: 005d22bcbb2dc8a4e907109f741f6207, type: 3}
-      propertyPath: sounds.Array.data[4].name
-      value: Ring
-      objectReference: {fileID: 0}
-    - target: {fileID: 6743708776963176181, guid: 005d22bcbb2dc8a4e907109f741f6207, type: 3}
-      propertyPath: sounds.Array.data[5].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 7e192c2420ce6f049a84d7ca74bd46b4, type: 3}
-    - target: {fileID: 6743708776963176181, guid: 005d22bcbb2dc8a4e907109f741f6207, type: 3}
-      propertyPath: sounds.Array.data[5].loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6743708776963176181, guid: 005d22bcbb2dc8a4e907109f741f6207, type: 3}
-      propertyPath: sounds.Array.data[5].name
-      value: Theme
-      objectReference: {fileID: 0}
-    - target: {fileID: 6743708776963176181, guid: 005d22bcbb2dc8a4e907109f741f6207, type: 3}
-      propertyPath: sounds.Array.data[4].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6743708776963176181, guid: 005d22bcbb2dc8a4e907109f741f6207, type: 3}
-      propertyPath: sounds.Array.data[5].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6743708776963176181, guid: 005d22bcbb2dc8a4e907109f741f6207, type: 3}
-      propertyPath: sounds.Array.data[4].volume
-      value: 0.78
-      objectReference: {fileID: 0}
-    - target: {fileID: 6743708776963176181, guid: 005d22bcbb2dc8a4e907109f741f6207, type: 3}
-      propertyPath: sounds.Array.data[5].volume
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 6743708776963176182, guid: 005d22bcbb2dc8a4e907109f741f6207, type: 3}
       propertyPath: m_Name
       value: Audio Manager
