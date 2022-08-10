@@ -129,6 +129,7 @@ public class GameManager : MonoBehaviour
     IEnumerator Delay()
     {
         yield return new WaitForSeconds(timeBeforeRetry);
+        ballPrefab.SetActive(true);
         ballPrefab.transform.position = ballStartPos;
         GOD.gameover = false;
         itIsGoal = false;

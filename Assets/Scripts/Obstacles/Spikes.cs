@@ -18,8 +18,8 @@ public class Spikes : MonoBehaviour
     {
         if (collision.collider.CompareTag("Ball"))
         {
-            Destroy(collision.gameObject);
             GameManager.instance.YouShouldRetry();
+            collision.gameObject.SetActive(false);
             Debug.Log("Ball Destroyed!");
         }
     }
